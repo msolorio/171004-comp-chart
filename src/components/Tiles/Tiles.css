@@ -1,0 +1,15 @@
+.tiles {
+  padding: 20px 0;
+}
+
+.tile {
+  padding: 20px;
+  min-height: 120px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.tile-active {
+  background: #eeeeff;
+}

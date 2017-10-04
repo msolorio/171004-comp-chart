@@ -3,3 +3,28 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* GRID *****************************/
+.row {
+  display: flex;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.col {
+  width: 100%;
+  padding-right: 5px;
+  padding-left: 5px;
+}

@@ -5,7 +5,10 @@ import App from './components/App.jsx';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <App />,
+  <div className="container">
+    <App />
+  </div>,
   document.getElementById('root')
 );
+
 registerServiceWorker();
