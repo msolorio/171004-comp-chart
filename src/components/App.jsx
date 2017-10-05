@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Tiles from './Tiles/Tiles.jsx';
-import Tile from './Tiles/Tile.jsx';
 import Chart from './Chart/Chart.jsx';
-import tileData from './Tiles/tilesData';
 import calculateSku from '../utilities/calculateSku';
 import skuRanking from '../utilities/skuRanking';
 
@@ -36,22 +34,8 @@ class App extends Component {
 
     return (
       <div className="App">
-
-        <Tiles>
-          {
-            tileData.tiles.map((tile, index) => {
-              return (
-                <div className="col"
-                  key={index}>
-                  <Tile {...tile}
-                    handleTileClick={this.handleTileClick}
-                    activeTiles={this.state.activeTiles} />
-                </div>
-              );
-            })
-          }
-        </Tiles>
-
+        <Tiles handleTileClick={this.handleTileClick}
+          activeTiles={this.state.activeTiles} />
         <Chart recommendedSku={recommendedSku} />
       </div>
     );

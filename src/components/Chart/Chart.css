@@ -1,0 +1,15 @@
+.header,
+.slider,
+.feature,
+.banner {
+  padding: 10px;
+  border: 1px solid #555;
+  color: #555;
+  background: #eeeeff;
+}
+
+.banner {
+  font-size: 14px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
