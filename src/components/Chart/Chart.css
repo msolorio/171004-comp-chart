@@ -19,3 +19,7 @@
   text-align: center;
   border-radius: 8px 8px 0 0;
 }
+
+.highlighted {
+  background: #888899;
+}
