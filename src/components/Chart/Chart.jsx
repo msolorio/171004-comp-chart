@@ -12,6 +12,7 @@ export default class Chart extends React.Component {
   }
 
   render() {
+
     return (
       <div className="chart">
 
@@ -21,7 +22,8 @@ export default class Chart extends React.Component {
               productData.products.map((product, index) => {
                 return (
                   <div className="col" key={index}>
-                    <Banner sku={product.sku} />
+                    <Banner sku={product.sku}
+                      recommendedSku={this.props.recommendedSku} />
                   </div>
                 );
               })
