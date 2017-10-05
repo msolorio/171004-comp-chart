@@ -6,6 +6,14 @@ export default function Header(props) {
     props.handleProductClick(props.sku);
   }
 
+  function handleProductMouseEnter() {
+    props.handleProductMouseEnter(props.sku);
+  }
+
+  function handleProductMouseLeave() {
+    props.handleProductMouseLeave();
+  }
+
   const highlightedClass = (
     !props.recommendedSku
     || props.highlightedSkus.indexOf(props.sku) > -1
@@ -15,7 +23,9 @@ export default function Header(props) {
 
   return (
     <div className={`header${highlightedClass}`}
-      onClick={handleProductClick}>
+      onClick={handleProductClick}
+      onMouseEnter={handleProductMouseEnter}
+      onMouseLeave={handleProductMouseLeave}>
       Header component
     </div>
   );

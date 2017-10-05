@@ -11,9 +11,12 @@ export default class Chart extends React.Component {
     super(props);
 
     this.handleProductClick = this.handleProductClick.bind(this);
+    this.handleProductMouseEnter = this.handleProductMouseEnter.bind(this);
+    this.handleProductMouseLeave = this.handleProductMouseLeave.bind(this);
 
     this.state = {
-      productClicked: false
+      productClicked: false,
+      productHovered: false
     };
   }
 
@@ -21,9 +24,20 @@ export default class Chart extends React.Component {
     this.setState({productClicked: sku});
   }
 
+  handleProductMouseEnter(sku) {
+    this.setState({productHovered: sku});
+  }
+
+  handleProductMouseLeave() {
+    this.setState({productHovered: false});
+  }
+
   render() {
+
     const highlightedSkus = [
-      this.props.recommendedSku
+      this.props.recommendedSku,
+      this.state.productClicked,
+      this.state.productHovered
     ];
 
     return (
@@ -53,7 +67,9 @@ export default class Chart extends React.Component {
                     <Header sku={product.sku}
                       recommendedSku={this.props.recommendedSku}
                       highlightedSkus={highlightedSkus}
-                      handleProductClick={this.handleProductClick} />
+                      handleProductClick={this.handleProductClick}
+                      handleProductMouseEnter={this.handleProductMouseEnter}
+                      handleProductMouseLeave={this.handleProductMouseLeave} />
                   </div>
                 );
               })
@@ -72,7 +88,9 @@ export default class Chart extends React.Component {
                     <Feature sku={product.sku}
                       recommendedSku={this.props.recommendedSku}
                       highlightedSkus={highlightedSkus}
-                      handleProductClick={this.handleProductClick} />
+                      handleProductClick={this.handleProductClick}
+                      handleProductMouseEnter={this.handleProductMouseEnter}
+                      handleProductMouseLeave={this.handleProductMouseLeave} />
                   </div>
                 );
               })

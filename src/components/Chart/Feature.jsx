@@ -6,6 +6,14 @@ export default function Feature(props) {
     props.handleProductClick(props.sku);
   }
 
+  function handleProductMouseEnter() {
+    props.handleProductMouseEnter(props.sku);
+  }
+
+  function handleProductMouseLeave() {
+    props.handleProductMouseLeave();
+  }
+
   const highlightedClass = (
     !props.recommendedSku
     || props.highlightedSkus.indexOf(props.sku) > -1
@@ -15,7 +23,9 @@ export default function Feature(props) {
 
   return (
     <div className={`feature${highlightedClass}`}
-      onClick={handleProductClick}>
+      onClick={handleProductClick}
+      onMouseEnter={handleProductMouseEnter}
+      onMouseLeave={handleProductMouseLeave}>
       Feature component
     </div>
   );
